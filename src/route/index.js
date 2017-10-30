@@ -17,14 +17,7 @@ const BasicExample = () => (
         <App>
             <div>
                 <Route path='/login' component={Login}/>
-                <Route exact path="/index">
-                    <Home>
-                        <Switch>
-                            <Route path="/index/Toggle/:id" component={Toggle}/>
-                            <Route path="/index/SelectArray" component={SelectArray}/>
-                        </Switch>
-                    </Home>
-                </Route>
+                <Route exact path="/home" component={Home}></Route>
                <Route path="/detail/:kerwinId" component={Detail}></Route>
             </div>
         </App>

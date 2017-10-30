@@ -24,7 +24,7 @@ class login extends Component{
         if (!/^[A-Z0-9]{6,9}$/.test(this.state.params.password)) {
             return false
         } else {
-            this.props.history.push('//index')
+            this.props.history.push('/home')
         }
 
     }

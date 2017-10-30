@@ -1,7 +1,12 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import './index.scss'
-import Xheader from '../common/Xheader/Xheader'
+import Toggle from '../toggle'
+import SelectArray from '../select'
+import {
+    Route,
+    Switch
+} from 'react-router-dom'
 import '../../assets/iconfont/iconfont.css'
 class home extends Component{
     constructor(props){
@@ -30,7 +35,7 @@ class home extends Component{
     
     toDetail = (id) =>{
     	console.log(this)
-    	this.props.history.push('/detail/3000');
+    	this.props.history.push('/detail/'+id);
     }
     render(){
         return (
@@ -46,6 +51,11 @@ class home extends Component{
                         )
                     }
                 </ul>
+                <Switch>
+                    <Route path="/home/Toggle/:id" component={Toggle}/>
+                    <Route path="/home/SelectArray" component={SelectArray}/>
+                </Switch>
+                {this.props.children}
             </div>
         )
     }
